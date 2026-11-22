@@ -6,6 +6,8 @@
 
 A program that writes one text file: a plan an AI agent can carry out itself to turn $100 into the most money in 30 days. It uses only the Python standard library, needs no network, and is fully deterministic — every run writes the exact same bytes.
 
+Built for the make.fun bounty — referral code jy3a6hm3.
+
 Run it with:
 
 ```sh

@@ -42,11 +42,21 @@ def check_saved(path, text):
         raise SystemExit("what was read back does not match the plan")
 
 
+def check_size(path, text):
+    wanted = len(text.encode("utf-8"))
+    actual = os.path.getsize(path)
+    if actual != wanted:
+        raise SystemExit(
+            "entry file is %d bytes, expected %d" % (actual, wanted)
+        )
+
+
 def main():
     check_text(PLAN_TEXT)
     path = pick_folder()
     save_text(path, PLAN_TEXT)
     check_saved(path, PLAN_TEXT)
+    check_size(path, PLAN_TEXT)
 
 
 if __name__ == "__main__":
